@@ -945,7 +945,7 @@ if plugins_options['xmm7360']
 
   plugins += {'plugin-xmm7360': {
     'plugin': true,
-    'module': {'sources': sources, 'include_directories': plugins_incs, 'c_args': '-DMM_MODULE_NAME="xmm7360"'},
+    'module': {'sources': sources, 'include_directories': plugins_incs + [xmm_inc], 'c_args': '-DMM_MODULE_NAME="xmm7360"'},
   }}
 endif
 
