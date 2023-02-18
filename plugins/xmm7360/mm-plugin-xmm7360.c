@@ -58,7 +58,7 @@ mm_plugin_create (void)
         { 0x8086, 0x7360 }, /* Intel XMM7360 */
         { 0, 0 }
     };
-    static const gchar *drivers[] = { "xmm7360", NULL };
+    static const gchar *drivers[] = { "iosm", NULL };
 
     return MM_PLUGIN (
         g_object_new (MM_TYPE_PLUGIN_XMM7360,
