@@ -245,7 +245,7 @@ report_connection_status (MMBaseBearer             *_self,
     /* TODO: implement */
 
     /* Chain up parent's report_connection_status() */
-    MM_BASE_BEARER_CLASS (mm_bearer_xmm7360_parent_class)->report_connection_status (_self, status);
+    MM_BASE_BEARER_CLASS (mm_bearer_xmm7360_parent_class)->report_connection_status (_self, status, NULL);
 }
 
 /*****************************************************************************/
