@@ -28,7 +28,7 @@ void _put_u8(GByteArray* arr, gulong val);
 gint8 get_elem_size(gchar c);
 
 int xmm7360_rpc_init(xmm7360_rpc* rpc) {
-    int fd = open("/dev/xmm0/rpc", O_RDWR | O_SYNC);
+    int fd = open("/dev/wwan0xmm0", O_RDWR | O_SYNC);
     if(fd < 0) {
         return -1;
     }
@@ -83,7 +83,7 @@ int xmm7360_rpc_pump(xmm7360_rpc* rpc, rpc_message** response_ptr) {
         //TODO printf unsolicited
         xmm7360_rpc_handle_unsolicited(rpc, response);
     }
-    
+
     if(response_ptr == NULL) {
         xmm7360_rpc_free_message(response);
     }
@@ -354,7 +354,7 @@ GBytes* get_string(GBytes* bytes, gsize *current_offset) {
 
     count = get_asn_int(bytes, current_offset);
     padding = get_asn_int(bytes, current_offset);
-    
+
     if(count > 0) {
         assert(count == value + padding);
     }
@@ -966,7 +966,7 @@ int xmm7360_establish_connection(xmm7360_rpc* rpc) {
     ) != 0) {
         goto err;
     }
-    
+
     xmm7360_rpc_free_message(ps_connect_result);
     xmm7360_rpc_free_message(datachannel_connect_result);
     return 0;

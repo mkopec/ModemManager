@@ -45,7 +45,7 @@ MMBaseBearer * xmm7360_create_bearer_finish (MMIfaceModem *self,
                                         GAsyncResult *res,
                                         GError **error);
 
-G_DEFINE_TYPE_EXTENDED (MMBroadbandModemXmm7360, mm_broadband_modem_xmm7360, MM_TYPE_BROADBAND_MODEM_XMM, 0, 
+G_DEFINE_TYPE_EXTENDED (MMBroadbandModemXmm7360, mm_broadband_modem_xmm7360, MM_TYPE_BROADBAND_MODEM_XMM, 0,
                          G_IMPLEMENT_INTERFACE (MM_TYPE_IFACE_MODEM, iface_modem_init))
 
 /*****************************************************************************/
@@ -84,7 +84,7 @@ mm_broadband_modem_xmm7360_init (MMBroadbandModemXmm7360 *self)
         return;
     }
 
-    mm_dbg ("Initializing XMM7360 modem!");
+    mm_obj_dbg (self, "Initializing XMM7360 modem!");
     /* lots of synchronous calls, this has to be improved for sure */
     xmm7360_rpc_execute(rpc, UtaMsSmsInit, FALSE, NULL, NULL);
     xmm7360_rpc_execute(rpc, UtaMsCbsInit, FALSE, NULL, NULL);
@@ -110,7 +110,7 @@ mm_broadband_modem_xmm7360_init (MMBroadbandModemXmm7360 *self)
         xmm7360_rpc_pump(rpc, NULL);
     }
 
-    mm_dbg ("Successfully initialized XMM7360 modem!");
+    mm_obj_dbg (self, "Successfully initialized XMM7360 modem!");
 }
 
 static void
