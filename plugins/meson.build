@@ -936,6 +936,19 @@ if plugins_options['x22x']
   plugins_udev_rules += files('x22x/77-mm-x22x-port-types.rules')
 endif
 
+# plugin: Intel XMM7360 / Fibocom L850-GL
+if plugins_options['xmm7360']
+  sources = files(
+    'xmm7360/mm-broadband-modem-xmm7360.c',
+    'xmm7360/mm-plugin-xmm7360.c',
+  )
+
+  plugins += {'plugin-xmm7360': {
+    'plugin': true,
+    'module': {'sources': sources, 'include_directories': plugins_incs, 'c_args': '-DMM_MODULE_NAME="xmm7360"'},
+  }}
+endif
+
 # plugin: zte
 if plugins_options['zte']
   test_udev_rules_dir_c_args = ['-DTESTUDEVRULESDIR_ZTE="@0@"'.format(plugins_dir / 'zte')]

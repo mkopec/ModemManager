@@ -86,6 +86,7 @@ option('plugin_ublox', type: 'feature', value: 'auto', description: 'enable ublo
 option('plugin_via', type: 'feature', value: 'auto', description: 'enable via plugin support')
 option('plugin_wavecom', type: 'feature', value: 'auto', description: 'enable wavecom plugin support')
 option('plugin_x22x', type: 'feature', value: 'auto', description: 'enable x22x plugin support')
+option('plugin_xmm7360', type: 'feature', value: 'auto', description: 'enable xmm7360 plugin support')
 
 # shared_icera
 option('plugin_zte', type: 'feature', value: 'auto', description: 'enable zte plugin support')
