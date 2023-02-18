@@ -19,7 +19,6 @@
 #include <unistd.h>
 
 #include "mm-xmm7360-rpc.h"
-#include "mm-xmm7360-rpc-enums-types.h"
 
 #define MAX_READ_SIZE (131072)
 
