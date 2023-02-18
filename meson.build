@@ -348,7 +348,7 @@ plugins_options_reqs = {
   'via': {'available': true, 'shared': []},
   'wavecom': {'available': true, 'shared': []},
   'x22x': {'available': true, 'shared': []},
-  'xmm7360': {'available': true, 'shared': [xmm]},
+  'xmm7360': {'available': true, 'shared': ['xmm']},
   'zte': {'available': true, 'shared': ['icera']},
 }
 
