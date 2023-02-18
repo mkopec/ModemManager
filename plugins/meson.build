@@ -939,8 +939,10 @@ endif
 # plugin: Intel XMM7360 / Fibocom L850-GL
 if plugins_options['xmm7360']
   sources = files(
-    'xmm7360/mm-broadband-modem-xmm7360.c',
     'xmm7360/mm-plugin-xmm7360.c',
+    'xmm7360/mm-broadband-modem-xmm7360.c',
+    'xmm7360/mm-bearer-xmm7360.c',
+    'xmm7360/mm-xmm7360-rpc.c',
   )
 
   plugins += {'plugin-xmm7360': {
