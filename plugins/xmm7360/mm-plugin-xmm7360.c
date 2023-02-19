@@ -40,6 +40,7 @@ create_modem (MMPlugin *self,
               GList *probes,
               GError **error)
 {
+    mm_obj_dbg (self, "Intel XMM7360 modem found...");
     return MM_BASE_MODEM (mm_broadband_modem_xmm7360_new (uid,
                                                   drivers,
                                                   mm_plugin_get_name (self),

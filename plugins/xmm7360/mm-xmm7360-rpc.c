@@ -27,7 +27,7 @@ void _put_u8(GByteArray* arr, gulong val);
 gint8 get_elem_size(gchar c);
 
 int xmm7360_rpc_init(xmm7360_rpc* rpc) {
-    int fd = open("/dev/wwan0xmm0", O_RDWR | O_SYNC);
+    int fd = open("/dev/wwan0xmmrpc0", O_RDWR | O_SYNC);
     if(fd < 0) {
         return -1;
     }
