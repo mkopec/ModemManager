@@ -52,23 +52,20 @@ create_modem (MMPlugin *self,
 G_MODULE_EXPORT MMPlugin *
 mm_plugin_create (void)
 {
-    //TODO: check if we need also "tty", "net" here
-    static const gchar *subsystems[] = { "net", "pci", "wwan", NULL };
+    static const gchar   *subsystems[] = { "net", "wwan", NULL };
     static const mm_uint16_pair products[] = {
         { 0x8086, 0x7360 }, /* Intel XMM7360 */
         { 0, 0 }
     };
-    static const gchar *drivers[] = { "iosm", NULL };
 
     return MM_PLUGIN (
-        g_object_new (MM_TYPE_PLUGIN_XMM7360,
-                      MM_PLUGIN_NAME,               "XMM7360",
-                      MM_PLUGIN_ALLOWED_SUBSYSTEMS, subsystems,
-                      MM_PLUGIN_ALLOWED_PRODUCT_IDS, products,
-                      MM_PLUGIN_ALLOWED_DRIVERS,    drivers,
-                      MM_PLUGIN_ALLOWED_AT,         TRUE,
-                      MM_PLUGIN_ALLOWED_XMM, TRUE,
-                      NULL));
+               g_object_new (MM_TYPE_PLUGIN_XMM7360,
+                             MM_PLUGIN_NAME,               "XMM7360",
+                             MM_PLUGIN_ALLOWED_SUBSYSTEMS, subsystems,
+                             MM_PLUGIN_ALLOWED_VENDOR_IDS, products,
+                             MM_PLUGIN_ALLOWED_AT,         TRUE,
+                             MM_PLUGIN_ALLOWED_XMM,        TRUE,
+                             NULL));
 }
 
 static void
