@@ -53,7 +53,7 @@ G_MODULE_EXPORT MMPlugin *
 mm_plugin_create (void)
 {
     //TODO: check if we need also "tty", "net" here
-    static const gchar *subsystems[] = { "net", "wwan", NULL };
+    static const gchar *subsystems[] = { "net", "pci", "wwan", NULL };
     static const mm_uint16_pair products[] = {
         { 0x8086, 0x7360 }, /* Intel XMM7360 */
         { 0, 0 }
