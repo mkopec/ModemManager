@@ -60,11 +60,11 @@ mm_plugin_create (void)
 
     return MM_PLUGIN (
                g_object_new (MM_TYPE_PLUGIN_XMM7360,
-                             MM_PLUGIN_NAME,               "XMM7360",
-                             MM_PLUGIN_ALLOWED_SUBSYSTEMS, subsystems,
-                             MM_PLUGIN_ALLOWED_VENDOR_IDS, products,
-                             MM_PLUGIN_ALLOWED_AT,         TRUE,
-                             MM_PLUGIN_ALLOWED_XMM,        TRUE,
+                             MM_PLUGIN_NAME,                "XMM7360",
+                             MM_PLUGIN_ALLOWED_SUBSYSTEMS,  subsystems,
+                             MM_PLUGIN_ALLOWED_PRODUCT_IDS, products,
+                             MM_PLUGIN_ALLOWED_AT,          TRUE,
+                             MM_PLUGIN_ALLOWED_XMM,         TRUE,
                              NULL));
 }
 
